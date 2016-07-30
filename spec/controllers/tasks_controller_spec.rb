@@ -16,10 +16,6 @@ RSpec.describe TasksController, type: :controller do
 		end
 	end
 
-	describe "#index" do
-
-	end
-	
 	describe "GET #index" do
 	    it "responds successfully with an HTTP 200 status code" do
 	      get :index

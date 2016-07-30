@@ -1,24 +1,28 @@
-<h1>Hello, let's plan your day now :)</h1>
+<h1>Hello, let's plan your day now!</h1>
 
-<h2>Tell me your three tasks that you want to complete today</h2>
+<h2>Tell me your three tasks that you want to complete today :)</h2>
 (It doesn't necessarily need to be the most important or crucial tasks from your job, but what would make you feel great about your day)
 
 <%= form_for :task, url: tasks_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>	 
+
+    <div class="form-group">
+      <%= f.label :title, "Task:" %><br>
+      <%= f.text_field :title, class: "form-control", placeholder: "Insert your task name here" %>
+    </div>
+  	 
  
   <p>
-    <%= f.submit %>
+    <%= f.submit class:'btn btn-primary'%>
   </p>
 <% end %>
+</form>
 
-<h2> Tarefas a serem realizadas hoje </h2>
+<h2>Tasks that should be done today</h2>
  
-<table>
-	<tr>
-    	<th>Tarefa</th>
+<table class="table table-condensed table-hover table-bordered">
+	<tr class="info">
+      <th>ID</th>
+    	<th>Task</th>
   	</tr>
 
   	<% @tasks.each do |task| %>
