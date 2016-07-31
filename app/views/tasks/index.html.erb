@@ -27,7 +27,7 @@
   </tr>
 
   <% @tasks.each do |task| %>
-    <% if not task.isDone? %>
+    <% if not task.isDone %>
       
       <tr class="btn-danger">
         <td><%= task.id %></td>
@@ -51,7 +51,7 @@
   </tr>
 
   <% @tasks.each do |task| %>
-    <% if task.isDone? %>
+    <% if task.isDone %>
       <tr class="btn-success">
         <td><%= task.id %></td>
         <td><%= task.title %></td>

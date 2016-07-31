@@ -4,10 +4,6 @@ class Task < ActiveRecord::Base
 		self.save
 	end
 
-	def isDone?
-		return self.isDone
-	end
-
 	def markTheTaskAsUndone
 		self.isDone = false
 		self.save
