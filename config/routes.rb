@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root 'application#index'
 
   resources :tasks
+
+  get '/tasks/markAsDone/:id' => 'tasks#markAsDone'
+  get '/tasks/markAsUndone/:id' => 'tasks#markAsUndone'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

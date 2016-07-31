@@ -19,16 +19,49 @@
 
 <h2>Tasks that should be done today</h2>
  
-<table class="table table-condensed table-hover table-bordered">
-	<tr class="info">
-      <th>ID</th>
-    	<th>Task</th>
-  	</tr>
+<table class="table table-condensed table-bordered">
+  <tr class="info">
+    <th width="03%">ID</th>
+    <th width="45%">Task</th>
+    <th width="41%">Status</th>
+  </tr>
 
-  	<% @tasks.each do |task| %>
-    	<tr>
-      		<td><%= task.id %></td>
-      		<td><%= task.title %></td>
-    	</tr>
-  	<% end %>
+  <% @tasks.each do |task| %>
+    <% if task.isDone? %>
+      
+    <% else %>
+      <tr class="btn-danger">
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= link_to "Mark as Done!", "/tasks/markAsDone/#{task.id}", class: "btn btn-success"%>
+        </td>    
+      </tr>    
+    <% end %>
+
+
+  <% end %>
 </table>
+
+<h2>Tasks that were done today</h2>
+ 
+<table class="table table-condensed table-bordered">
+  <tr class="info">
+    <th width="03%">ID</th>
+    <th width="45%">Task</th>
+    <th width="41%">Status</th>
+  </tr>
+
+  <% @tasks.each do |task| %>
+    <% if task.isDone? %>
+      <tr class="btn-success">
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= link_to "Mark as Undone!", "/tasks/markAsUndone/#{task.id}", class: "btn btn-danger"%>
+        </td>    
+      </tr>
+    <% end %>
+
+
+  <% end %>
+</table>
+
