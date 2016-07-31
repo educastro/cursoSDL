@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
 		self.save
 	end
 
-	def self.isDone?
+	def isDone?
 		return self.isDone
 	end
 
