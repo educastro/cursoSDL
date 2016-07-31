@@ -3,8 +3,8 @@ class Task < ActiveRecord::Base
 		self.isDone = true
 		self.save
 	end
-	
-	def isDone?
+
+	def self.isDone?
 		return self.isDone
 	end
 
